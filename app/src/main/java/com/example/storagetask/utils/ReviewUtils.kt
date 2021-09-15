@@ -3,7 +3,7 @@ package com.example.storagetask.utils
 import com.example.storagetask.data.Review
 import java.util.*
 
-fun generateRandomReviews() = sequence {
+fun generateRandomReviews(incrementIdentifiers: Boolean = false) = sequence {
     val titles = listOf(
         "Just a title",
         "Sample title",
@@ -15,7 +15,7 @@ fun generateRandomReviews() = sequence {
 
     while (true) {
         val review = Review(
-            n++,
+            if (incrementIdentifiers) n++ else 0L,
             titles[Random().nextInt(titles.size)],
             (0..5).random().toFloat(),
             "Just some summary.\nAnother line.\nAnother planet.",

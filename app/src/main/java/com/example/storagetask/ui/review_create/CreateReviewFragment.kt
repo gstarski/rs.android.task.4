@@ -61,6 +61,6 @@ class CreateReviewFragment : Fragment() {
             binding.ratingBar.rating,
             binding.editSummary.text.toString()
         )
-        viewModel.save(review)
+        viewModel.add(review)
     }
 }

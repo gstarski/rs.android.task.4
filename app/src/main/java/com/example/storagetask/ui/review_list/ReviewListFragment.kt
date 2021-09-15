@@ -8,6 +8,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.SimpleItemAnimator
 import com.example.storagetask.R
 import com.example.storagetask.data.Review
 import com.example.storagetask.databinding.FragmentReviewListBinding
@@ -50,6 +51,7 @@ class ReviewListFragment : Fragment() {
         binding.recyclerReviews.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = reviewAdapter
+            (itemAnimator as SimpleItemAnimator).supportsChangeAnimations = false
         }
         binding.addFab.setOnClickListener { navigateToCreate() }
         Log.d("TAG", "View created")

@@ -98,7 +98,7 @@ class EditReviewFragment : Fragment() {
         binding.ratingBar.rating = review.rating
 
         updateReview = {
-            viewModel.save(review.copy(
+            viewModel.update(review.copy(
                 title = binding.editTitle.text.toString(),
                 rating = binding.ratingBar.rating,
                 summary = binding.editSummary.text.toString()
