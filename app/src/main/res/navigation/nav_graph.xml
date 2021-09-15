@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/reviewListFragment">
+
+    <fragment
+        android:id="@+id/reviewListFragment"
+        android:name="com.example.storagetask.ui.review_list.ReviewListFragment"
+        android:label="Reviews"
+        tools:layout="@layout/fragment_review_list" >
+        <action
+            android:id="@+id/action_reviewListFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_reviewListFragment_to_editReviewFragment"
+            app:destination="@id/editReviewFragment" />
+        <action
+            android:id="@+id/action_reviewListFragment_to_createReviewFragment"
+            app:destination="@id/createReviewFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.storagetask.ui.settings.SettingsFragment"
+        android:label="Settings" />
+
+    <fragment
+        android:id="@+id/editReviewFragment"
+        android:name="com.example.storagetask.ui.review_edit.EditReviewFragment"
+        tools:layout="@layout/fragment_edit_review"
+        android:label="Edit Review" >
+        <argument
+            android:name="reviewId"
+            app:argType="long" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/createReviewFragment"
+        android:name="com.example.storagetask.ui.review_create.CreateReviewFragment"
+        tools:layout="@layout/fragment_edit_review"
+        android:label="Create Review" >
+    </fragment>
+</navigation>

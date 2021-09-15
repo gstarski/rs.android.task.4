@@ -1,0 +1,25 @@
+<resources>
+    <!-- Reviews Sorting Preference -->
+    <string-array name="reviews_sort_entries">
+        <item>Title</item>
+        <item>Rating</item>
+        <item>Date Created</item>
+    </string-array>
+    <string-array name="reviews_sort_values">
+        <item>title</item>
+        <item>rating</item>
+        <item>dateCreated</item>
+    </string-array>
+
+    <!-- Database Access Method -->
+    <string-array name="db_access_method_entries">
+        <item>None</item>
+        <item>Cursors</item>
+        <item>Room</item>
+    </string-array>
+    <string-array name="db_access_method_values">
+        <item>none</item>
+        <item>cursors</item>
+        <item>room</item>
+    </string-array>
+</resources>
