@@ -3,6 +3,7 @@ package com.example.storagetask.ui.review_list
 import android.os.Bundle
 import android.util.Log
 import android.view.*
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
@@ -69,12 +70,18 @@ class ReviewListFragment : Fragment() {
 
         viewLifecycleOwner.lifecycleScope.launchWhenStarted {
             try {
-                viewModel.reviews.collect {
+                viewModel.sortedReviews.collect {
                     Log.d("TAG", "Got list update (${it.size} elements)")
                     reviewAdapter.submitList(it)
                 }
             } finally {
                 Log.d("TAG", "Stop listening for list updates")
+            }
+        }
+
+        viewLifecycleOwner.lifecycleScope.launchWhenStarted {
+            viewModel.title.collect {
+                (activity as? AppCompatActivity)?.supportActionBar?.title = it
             }
         }
     }

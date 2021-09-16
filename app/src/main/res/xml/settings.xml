@@ -14,7 +14,7 @@
         <ListPreference
             app:key="db_access_method"
             app:title="Database access method"
-            app:defaultValue="none"
+            app:defaultValue="room"
             app:entries="@array/db_access_method_entries"
             app:entryValues="@array/db_access_method_values"
             app:useSimpleSummaryProvider="true" />

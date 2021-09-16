@@ -112,4 +112,6 @@ class EditReviewFragment : Fragment() {
         Toast.makeText(context, "Unable to load the review", Toast.LENGTH_LONG).show()
         findNavController().navigateUp()
     }
+
+    // TODO: validation, separate vm
 }
